@@ -41,25 +41,49 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-tF-8Sa">
+                                            <rect key="frame" x="34" y="0.0" width="30" height="120"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="FgG-98-sfN"/>
+                                            </constraints>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4R-JW-4cS">
-                                            <rect key="frame" x="20" y="0.0" width="8" height="120"/>
+                                            <rect key="frame" x="45" y="0.0" width="8" height="120"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="8" id="Ttc-r9-HTJ"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9s-tZ-k4n">
+                                            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dae-1I-g4R"/>
+                                                <constraint firstAttribute="width" constant="42" id="xuH-NB-2zl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="C4R-JW-4cS" firstAttribute="top" secondItem="6vb-O7-ZLm" secondAttribute="top" id="3hK-cK-A4T"/>
                                     <constraint firstAttribute="bottom" secondItem="C4R-JW-4cS" secondAttribute="bottom" id="IUQ-vU-cEF"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="UDt-ie-Ix4" secondAttribute="trailing" constant="16" id="Mbc-zJ-QDt"/>
-                                    <constraint firstItem="C4R-JW-4cS" firstAttribute="leading" secondItem="6vb-O7-ZLm" secondAttribute="leading" constant="20" id="t4v-Xj-bXp"/>
+                                    <constraint firstAttribute="bottom" secondItem="f2m-tF-8Sa" secondAttribute="bottom" id="aV1-V4-4uY"/>
+                                    <constraint firstItem="Q9s-tZ-k4n" firstAttribute="leading" secondItem="6vb-O7-ZLm" secondAttribute="leading" id="d1i-Ge-6o5"/>
+                                    <constraint firstItem="f2m-tF-8Sa" firstAttribute="top" secondItem="6vb-O7-ZLm" secondAttribute="top" id="jGh-Qd-4Pm"/>
+                                    <constraint firstItem="Q9s-tZ-k4n" firstAttribute="top" secondItem="6vb-O7-ZLm" secondAttribute="top" id="sSU-N1-LL5"/>
+                                    <constraint firstItem="C4R-JW-4cS" firstAttribute="leading" secondItem="6vb-O7-ZLm" secondAttribute="leading" constant="45" id="t4v-Xj-bXp"/>
+                                    <constraint firstItem="f2m-tF-8Sa" firstAttribute="centerX" secondItem="C4R-JW-4cS" secondAttribute="centerX" id="vwc-rC-a6z"/>
                                     <constraint firstItem="UDt-ie-Ix4" firstAttribute="centerY" secondItem="6vb-O7-ZLm" secondAttribute="centerY" id="yPc-Pl-Spy"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="barView" destination="C4R-JW-4cS" id="k1X-Ly-JdA"/>
+                                    <outlet property="indoorLocationView" destination="f2m-tF-8Sa" id="4nU-SW-f2L"/>
                                     <outlet property="itemTitle" destination="UDt-ie-Ix4" id="lgY-bT-3QZ"/>
+                                    <outlet property="startHour" destination="Q9s-tZ-k4n" id="HzC-ex-aAP"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

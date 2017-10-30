@@ -7,6 +7,7 @@
 //
 
 #import "ActivityCell.h"
+#import "DateFormatter.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -16,10 +17,18 @@
     [super awakeFromNib];
 
     [self setClipsToBounds:YES];
+
+    [self setupViews];
+}
+
+- (void)setupViews {
+    self.indoorLocationView.layer.cornerRadius = CGRectGetWidth(self.indoorLocationView.bounds) / 2.0;
+    self.indoorLocationView.layer.masksToBounds = YES;
 }
 
 - (void)setupWith:(Activity *)activity {
     self.itemTitle.text = [NSString stringWithFormat:@"%@: %d minutes", activity.name, (int) (activity.duration / 60.0)];
+    self.startHour.text = [[DateFormatter sharedInstance].hourFormatter stringFromDate:activity.startDate];
 
     switch (activity.type) {
         case Stationary:
@@ -39,11 +48,16 @@
             break;
     }
 
-    CLGeocoder *geoCoder = [CLGeocoder new];
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:activity.location.latitude longitude:activity.location.longitude];
-    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        self.itemTitle.text = [NSString stringWithFormat:@"[%@] %@: %d minutes", placemarks.firstObject.name, activity.name, (int) (activity.duration / 60.0)];
-    }];
+    self.barView.hidden = activity.isInsideBuilding;
+    self.indoorLocationView.hidden = !activity.isInsideBuilding;
+
+    if (activity.isInsideBuilding) {
+        CLGeocoder *geoCoder = [CLGeocoder new];
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:activity.location.latitude longitude:activity.location.longitude];
+        [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            self.itemTitle.text = [NSString stringWithFormat:@"[%@] %@: %d minutes", placemarks.firstObject.name, activity.name, (int) (activity.duration / 60.0)];
+        }];
+    }
 }
 
 @end

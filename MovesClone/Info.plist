@@ -28,6 +28,8 @@
 	<string>Allow tracking location.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Allow tracking movement</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Allow tracking movement.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

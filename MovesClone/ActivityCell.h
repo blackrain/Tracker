@@ -13,6 +13,8 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *itemTitle;
 @property (nonatomic, weak) IBOutlet UIView *barView;
+@property (nonatomic, weak) IBOutlet UIView *indoorLocationView;
+@property (nonatomic, weak) IBOutlet UILabel *startHour;
 
 - (void)setupWith:(Activity*)activity;
 

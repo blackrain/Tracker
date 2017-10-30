@@ -18,9 +18,6 @@
 - (void)startUpdatingLocation;
 - (void)stopUpdatingLocation;
 
-- (void)startBackgroundLocation;
-- (void)stopBackgroundLocation;
-
 - (void)activityItemsForDate:(NSDate*)date onComplete:(void (^)(NSArray<Activity *>*))completion;
 
 @end

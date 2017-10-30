@@ -10,6 +10,7 @@
 		AE0832AD1FA6913000937303 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0832AC1FA6913000937303 /* Activity.m */; };
 		AE0832B01FA69F8000937303 /* LocationAndActivityTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0832AF1FA69F8000937303 /* LocationAndActivityTracker.m */; };
 		AE0832B31FA6A5E900937303 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0832B21FA6A5E900937303 /* NSDate+Additions.m */; };
+		AE0832B61FA76E2300937303 /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0832B51FA76E2300937303 /* DateFormatter.m */; };
 		AE82BFFF1FA227080096E665 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE82BFFE1FA227080096E665 /* AppDelegate.m */; };
 		AE82C0071FA227080096E665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE82C0061FA227080096E665 /* Assets.xcassets */; };
 		AE82C00D1FA227080096E665 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE82C00C1FA227080096E665 /* main.m */; };
@@ -26,6 +27,8 @@
 		AE0832AF1FA69F8000937303 /* LocationAndActivityTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAndActivityTracker.m; sourceTree = "<group>"; };
 		AE0832B11FA6A5E900937303 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		AE0832B21FA6A5E900937303 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		AE0832B41FA76E2300937303 /* DateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
+		AE0832B51FA76E2300937303 /* DateFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
 		AE82BFFA1FA227080096E665 /* MovesClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovesClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE82BFFD1FA227080096E665 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE82BFFE1FA227080096E665 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				AE0832AF1FA69F8000937303 /* LocationAndActivityTracker.m */,
 				AE0832B11FA6A5E900937303 /* NSDate+Additions.h */,
 				AE0832B21FA6A5E900937303 /* NSDate+Additions.m */,
+				AE0832B41FA76E2300937303 /* DateFormatter.h */,
+				AE0832B51FA76E2300937303 /* DateFormatter.m */,
 			);
 			path = MovesClone;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE82C01F1FA24CD10096E665 /* ActivityCell.m in Sources */,
+				AE0832B61FA76E2300937303 /* DateFormatter.m in Sources */,
 				AE82C01C1FA246AF0096E665 /* ActivitiesCollectionViewController.m in Sources */,
 				AE82C00D1FA227080096E665 /* main.m in Sources */,
 				AE82BFFF1FA227080096E665 /* AppDelegate.m in Sources */,

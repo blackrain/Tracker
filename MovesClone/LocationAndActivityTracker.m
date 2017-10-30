@@ -48,24 +48,26 @@
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     self.locationManager.allowsBackgroundLocationUpdates = YES;
+    self.locationManager.pausesLocationUpdatesAutomatically = YES;
+    self.locationManager.activityType = CLActivityTypeFitness;
+    if (@available(iOS 11.0, *)) {
+        self.locationManager.showsBackgroundLocationIndicator = YES;
+    }
 
     self.activityManager = [CMMotionActivityManager new];
 }
 
 - (void)startUpdatingLocation {
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
     [self.locationManager startMonitoringVisits];
+//    [self.locationManager startUpdatingLocation];
 }
 
 - (void)stopUpdatingLocation {
     [self.locationManager stopMonitoringVisits];
-}
-
-- (void)startBackgroundLocation {
-    
-}
-
-- (void)stopBackgroundLocation {
-
+//    [self.locationManager stopUpdatingLocation];
 }
 
 - (void)activityItemsForDate:(NSDate *)date onComplete:(void (^)(NSArray<Activity *>*))completion {
@@ -122,9 +124,12 @@
 
         Activity *activity = [Activity new];
 
-        activity.isInsideBuilding = [self activityInsideBuilding:item];
+//        activity.isInsideBuilding = [self activityInsideBuilding:item];
+        activity.startDate = item.startDate;
+        activity.isInsideBuilding = (BOOL) arc4random_uniform(4);
         activity.name = item.name;
         activity.duration = seconds;
+        activity.location = CLLocationCoordinate2DMake(52.212659, 20.951500);
 
         if (item.stationary) {
             activity.type = Stationary;
@@ -152,6 +157,17 @@
 }
 
 #pragma mark <CLLocationManagerDelegate>
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    NSLog(@"Location updated: %@", locations);
+
+    for (CLLocation *location in locations) {
+        CLGeocoder *geoCoder = [CLGeocoder new];
+        [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            NSLog(@"Geolocation: %@", placemarks.firstObject.name);
+        }];
+    }
+}
 
 - (void)locationManager:(CLLocationManager *)manager didVisit:(CLVisit *)visit {
     [self.visits addObject:visit];

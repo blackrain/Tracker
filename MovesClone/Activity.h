@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, ActivityType) {
 
 @interface Activity : NSObject
 
+@property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, assign) double duration;
 @property (nonatomic, assign) BOOL isInsideBuilding;
 @property (nonatomic, strong) NSString *name;
