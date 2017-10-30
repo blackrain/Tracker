@@ -17,6 +17,7 @@
 		AE82C0191FA2462E0096E665 /* Activities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE82C0181FA2462E0096E665 /* Activities.storyboard */; };
 		AE82C01C1FA246AF0096E665 /* ActivitiesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE82C01B1FA246AF0096E665 /* ActivitiesCollectionViewController.m */; };
 		AE82C01F1FA24CD10096E665 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE82C01E1FA24CD10096E665 /* ActivityCell.m */; };
+		AE88A9481FA791AB00F91521 /* ActivityHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88A9471FA791AB00F91521 /* ActivityHeader.m */; };
 		AEE834E31FA29FBA00B9A250 /* CMMotionActivity+Types.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE834E21FA29FBA00B9A250 /* CMMotionActivity+Types.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		AE82C01B1FA246AF0096E665 /* ActivitiesCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivitiesCollectionViewController.m; sourceTree = "<group>"; };
 		AE82C01D1FA24CD10096E665 /* ActivityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
 		AE82C01E1FA24CD10096E665 /* ActivityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
+		AE88A9461FA791AB00F91521 /* ActivityHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityHeader.h; sourceTree = "<group>"; };
+		AE88A9471FA791AB00F91521 /* ActivityHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityHeader.m; sourceTree = "<group>"; };
 		AEE834E11FA29FBA00B9A250 /* CMMotionActivity+Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMMotionActivity+Types.h"; sourceTree = "<group>"; };
 		AEE834E21FA29FBA00B9A250 /* CMMotionActivity+Types.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CMMotionActivity+Types.m"; sourceTree = "<group>"; };
 		AEF800091FA6866C0043548F /* Home.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Home.gpx; path = TestLocations/Home.gpx; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 			children = (
 				AE82C01D1FA24CD10096E665 /* ActivityCell.h */,
 				AE82C01E1FA24CD10096E665 /* ActivityCell.m */,
+				AE88A9461FA791AB00F91521 /* ActivityHeader.h */,
+				AE88A9471FA791AB00F91521 /* ActivityHeader.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				AE82C01F1FA24CD10096E665 /* ActivityCell.m in Sources */,
 				AE0832B61FA76E2300937303 /* DateFormatter.m in Sources */,
 				AE82C01C1FA246AF0096E665 /* ActivitiesCollectionViewController.m in Sources */,
+				AE88A9481FA791AB00F91521 /* ActivityHeader.m in Sources */,
 				AE82C00D1FA227080096E665 /* main.m in Sources */,
 				AE82BFFF1FA227080096E665 /* AppDelegate.m in Sources */,
 				AE0832AD1FA6913000937303 /* Activity.m in Sources */,

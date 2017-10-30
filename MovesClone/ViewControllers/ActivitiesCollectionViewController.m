@@ -9,6 +9,7 @@
 #import "ActivitiesCollectionViewController.h"
 #import "ActivityCell.h"
 #import "LocationAndActivityTracker.h"
+#import "ActivityHeader.h"
 
 @interface ActivitiesCollectionViewController ()
 
@@ -47,6 +48,18 @@ static NSString * const reuseIdentifier = @"ActivityCell";
     return [self.activityItems count];
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+
+    if (kind == UICollectionElementKindSectionHeader) {
+        ActivityHeader *header = (ActivityHeader*) [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                                      withReuseIdentifier:@"ActivityHeader"
+                                                                                             forIndexPath:indexPath];
+        return header;
+    }
+
+    return nil;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ActivityCell *cell = (ActivityCell*) [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
@@ -65,7 +78,6 @@ static NSString * const reuseIdentifier = @"ActivityCell";
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     Activity *item = self.activityItems[indexPath.row];
     return CGSizeMake(CGRectGetWidth(self.view.bounds), item.duration);
-//    return CGSizeMake(CGRectGetWidth(self.view.bounds), 50.0);
 }
 
 @end
