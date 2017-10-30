@@ -62,12 +62,10 @@
         [self.locationManager requestAlwaysAuthorization];
     }
     [self.locationManager startMonitoringVisits];
-//    [self.locationManager startUpdatingLocation];
 }
 
 - (void)stopUpdatingLocation {
     [self.locationManager stopMonitoringVisits];
-//    [self.locationManager stopUpdatingLocation];
 }
 
 - (void)activityItemsForDate:(NSDate *)date onComplete:(void (^)(NSArray<Activity *>*))completion {
@@ -124,9 +122,9 @@
 
         Activity *activity = [Activity new];
 
-//        activity.isInsideBuilding = [self activityInsideBuilding:item];
+        activity.isInsideBuilding = [self activityInsideBuilding:item];
         activity.startDate = item.startDate;
-        activity.isInsideBuilding = (BOOL) arc4random_uniform(4);
+//        activity.isInsideBuilding = (BOOL) arc4random_uniform(4);
         activity.name = item.name;
         activity.duration = seconds;
         activity.location = CLLocationCoordinate2DMake(52.212659, 20.951500);
@@ -141,9 +139,14 @@
             activity.type = Automotive;
         }
 
-        [buffer addObject:activity];
+        if (buffer.count > 0) {
+            if (!buffer.lastObject.isInsideBuilding || (buffer.lastObject.isInsideBuilding && !activity.isInsideBuilding)) {
+                [buffer addObject:activity];
+            }
+        } else {
+            [buffer addObject:activity];
+        }
     }
-
     return (NSArray<Activity*>*) buffer;
 }
 
@@ -159,14 +162,14 @@
 #pragma mark <CLLocationManagerDelegate>
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    NSLog(@"Location updated: %@", locations);
-
-    for (CLLocation *location in locations) {
-        CLGeocoder *geoCoder = [CLGeocoder new];
-        [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-            NSLog(@"Geolocation: %@", placemarks.firstObject.name);
-        }];
-    }
+//    NSLog(@"Location updated: %@", locations);
+//
+//    for (CLLocation *location in locations) {
+//        CLGeocoder *geoCoder = [CLGeocoder new];
+//        [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+//            NSLog(@"Geolocation: %@", placemarks.firstObject.name);
+//        }];
+//    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didVisit:(CLVisit *)visit {

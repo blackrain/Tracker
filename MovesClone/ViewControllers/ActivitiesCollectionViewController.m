@@ -26,13 +26,11 @@ static NSString * const reuseIdentifier = @"ActivityCell";
     [self updateData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)updateData {
-    [[LocationAndActivityTracker sharedInstance] activityItemsForDate:[NSDate new]
+    NSTimeInterval timeZoneSeconds = [[NSTimeZone localTimeZone] secondsFromGMT];
+    NSDate *dateInUTC = [[NSDate date] dateByAddingTimeInterval:timeZoneSeconds];
+
+    [[LocationAndActivityTracker sharedInstance] activityItemsForDate:dateInUTC
                                                            onComplete:^(NSArray<Activity *> *activityItems) {
                                                                self.activityItems = activityItems;
                                                                [self.collectionView reloadData];
@@ -65,9 +63,9 @@ static NSString * const reuseIdentifier = @"ActivityCell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    Activity *item = self.activityItems[indexPath.row];
-//    return CGSizeMake(CGRectGetWidth(self.view.bounds), item.duration);
-    return CGSizeMake(CGRectGetWidth(self.view.bounds), 50.0);
+    Activity *item = self.activityItems[indexPath.row];
+    return CGSizeMake(CGRectGetWidth(self.view.bounds), item.duration);
+//    return CGSizeMake(CGRectGetWidth(self.view.bounds), 50.0);
 }
 
 @end

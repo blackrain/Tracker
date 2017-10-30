@@ -18,7 +18,8 @@
     [components setMinute:0];
     [components setSecond:0];
 
-    return [cal dateFromComponents:components];
+    NSTimeInterval timeZoneSeconds = [[NSTimeZone localTimeZone] secondsFromGMT];
+    return [[cal dateFromComponents:components] dateByAddingTimeInterval:timeZoneSeconds];
 }
 
 - (NSDate *)endOfDay {
@@ -29,7 +30,8 @@
     [components setMinute:59];
     [components setSecond:59];
 
-    return [cal dateFromComponents:components];
+    NSTimeInterval timeZoneSeconds = [[NSTimeZone localTimeZone] secondsFromGMT];
+    return [[cal dateFromComponents:components] dateByAddingTimeInterval:timeZoneSeconds];
 }
 
 - (NSInteger)secondsBetweenDate:(NSDate*)date {
