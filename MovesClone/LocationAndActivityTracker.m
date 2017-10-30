@@ -9,6 +9,7 @@
 #import "LocationAndActivityTracker.h"
 #import "NSDate+Additions.h"
 #import "CMMotionActivity+Types.h"
+#import "Activity.h"
 
 #define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
@@ -124,6 +125,16 @@
         activity.isInsideBuilding = [self activityInsideBuilding:item];
         activity.name = item.name;
         activity.duration = seconds;
+
+        if (item.stationary) {
+            activity.type = Stationary;
+        } else if (item.walking) {
+            activity.type = Walking;
+        } else if (item.running) {
+            activity.type = Running;
+        } else if (item.automotive) {
+            activity.type = Automotive;
+        }
 
         [buffer addObject:activity];
     }

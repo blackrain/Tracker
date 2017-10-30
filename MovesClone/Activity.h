@@ -10,11 +10,19 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CoreMotion.h>
 
+typedef NS_ENUM(NSInteger, ActivityType) {
+    Stationary,
+    Walking,
+    Running,
+    Automotive
+};
+
 @interface Activity : NSObject
 
 @property (nonatomic, assign) double duration;
 @property (nonatomic, assign) BOOL isInsideBuilding;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) CLLocationCoordinate2D location;
+@property (nonatomic, assign) ActivityType type;
 
 @end
