@@ -15,5 +15,6 @@
 @property (nonatomic, assign) double duration;
 @property (nonatomic, assign) BOOL isInsideBuilding;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, assign) CLLocationCoordinate2D location;
 
 @end
