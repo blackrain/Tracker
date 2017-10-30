@@ -56,6 +56,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0832B71FA7706300937303 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE82C01A1FA246AF0096E665 /* ActivitiesCollectionViewController.h */,
+				AE82C01B1FA246AF0096E665 /* ActivitiesCollectionViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AE0832B81FA7706D00937303 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE82C01D1FA24CD10096E665 /* ActivityCell.h */,
+				AE82C01E1FA24CD10096E665 /* ActivityCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE0832B91FA7707400937303 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AE0832B41FA76E2300937303 /* DateFormatter.h */,
+				AE0832B51FA76E2300937303 /* DateFormatter.m */,
+				AE0832AE1FA69F8000937303 /* LocationAndActivityTracker.h */,
+				AE0832AF1FA69F8000937303 /* LocationAndActivityTracker.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		AE0832BA1FA7707C00937303 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AE82BFFD1FA227080096E665 /* AppDelegate.h */,
+				AE82BFFE1FA227080096E665 /* AppDelegate.m */,
+				AE82C00B1FA227080096E665 /* Info.plist */,
+				AE82C00C1FA227080096E665 /* main.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AE0832BB1FA7708300937303 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE82C0061FA227080096E665 /* Assets.xcassets */,
+				AE82C0181FA2462E0096E665 /* Activities.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AE0832BC1FA770A400937303 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEE834E11FA29FBA00B9A250 /* CMMotionActivity+Types.h */,
+				AEE834E21FA29FBA00B9A250 /* CMMotionActivity+Types.m */,
+				AE0832B11FA6A5E900937303 /* NSDate+Additions.h */,
+				AE0832B21FA6A5E900937303 /* NSDate+Additions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE0832BD1FA770C300937303 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE0832AB1FA6913000937303 /* Activity.h */,
+				AE0832AC1FA6913000937303 /* Activity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AE82BFF11FA227080096E665 = {
 			isa = PBXGroup;
 			children = (
@@ -76,26 +145,13 @@
 		AE82BFFC1FA227080096E665 /* MovesClone */ = {
 			isa = PBXGroup;
 			children = (
-				AE82BFFD1FA227080096E665 /* AppDelegate.h */,
-				AE82BFFE1FA227080096E665 /* AppDelegate.m */,
-				AE82C0061FA227080096E665 /* Assets.xcassets */,
-				AE82C00B1FA227080096E665 /* Info.plist */,
-				AE82C00C1FA227080096E665 /* main.m */,
-				AE82C0181FA2462E0096E665 /* Activities.storyboard */,
-				AE82C01A1FA246AF0096E665 /* ActivitiesCollectionViewController.h */,
-				AE82C01B1FA246AF0096E665 /* ActivitiesCollectionViewController.m */,
-				AE82C01D1FA24CD10096E665 /* ActivityCell.h */,
-				AE82C01E1FA24CD10096E665 /* ActivityCell.m */,
-				AEE834E11FA29FBA00B9A250 /* CMMotionActivity+Types.h */,
-				AEE834E21FA29FBA00B9A250 /* CMMotionActivity+Types.m */,
-				AE0832AB1FA6913000937303 /* Activity.h */,
-				AE0832AC1FA6913000937303 /* Activity.m */,
-				AE0832AE1FA69F8000937303 /* LocationAndActivityTracker.h */,
-				AE0832AF1FA69F8000937303 /* LocationAndActivityTracker.m */,
-				AE0832B11FA6A5E900937303 /* NSDate+Additions.h */,
-				AE0832B21FA6A5E900937303 /* NSDate+Additions.m */,
-				AE0832B41FA76E2300937303 /* DateFormatter.h */,
-				AE0832B51FA76E2300937303 /* DateFormatter.m */,
+				AE0832BA1FA7707C00937303 /* Application */,
+				AE0832BC1FA770A400937303 /* Extensions */,
+				AE0832BD1FA770C300937303 /* Model */,
+				AE0832BB1FA7708300937303 /* Resources */,
+				AE0832B91FA7707400937303 /* Tools */,
+				AE0832B71FA7706300937303 /* ViewControllers */,
+				AE0832B81FA7706D00937303 /* Views */,
 			);
 			path = MovesClone;
 			sourceTree = "<group>";
